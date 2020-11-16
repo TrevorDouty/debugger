@@ -1,5 +1,9 @@
 import { dbContext } from '../db/DbContext'
 class BugsService {
+  async editBug(bugId, body) {
+    return await dbContext.Bugs.findByIdAndUpdate(bugId, body)
+  }
+
   async getBugs(query = {}) {
     return await dbContext.Bugs.find(query).populate('creatorId')
   }

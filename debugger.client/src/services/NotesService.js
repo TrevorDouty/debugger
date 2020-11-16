@@ -24,5 +24,14 @@ class NotesService {
       logger.error(error)
     }
   }
+
+  async deleteNote(data) {
+    try {
+      await api.delete('/api/notes/' + data.id)
+      this.getNotes(data.bug)
+    } catch (error) {
+      logger.error(error)
+    }
+  }
 }
 export const notesService = new NotesService()

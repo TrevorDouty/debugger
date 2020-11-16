@@ -26,7 +26,6 @@
         </button>
       </form>
     </div>
-
     <bugs-component v-for="bug in bugs" :key="bug" :bugs-prop="bug" />
   </div>
 </template>
@@ -67,5 +66,9 @@ export default {
 <style scoped>
 img {
   max-width: 100px;
+}
+
+.red{
+  background-color: red;
 }
 </style>
